@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2lrcsdp2ov67"]
+
+[ext_resource type="Script" path="res://scripts/ui/base_popup.gd" id="1_iry5j"]
+[ext_resource type="FontFile" uid="uid://wwahjgp203ua" path="res://assets/fonts/GermaniaOne-Regular.ttf" id="2_738o0"]
+[ext_resource type="Texture2D" uid="uid://4nkylwd0f8oo" path="res://assets/images/btn_oke.png" id="3_738o0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btd1e"]
+bg_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tukst"]
+bg_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6156863, 0.8156863, 0, 1)
+
+[node name="PopUpAttention" type="CanvasLayer"]
+script = ExtResource("1_iry5j")
+
+[node name="WadahUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BackgroundGelap" type="ColorRect" parent="WadahUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6784314)
+
+[node name="PanePopUp" type="PanelContainer" parent="WadahUI"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_btd1e")
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WadahUI/PanePopUp/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 1
+
+[node name="Label" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_738o0")
+theme_override_font_sizes/font_size = 36
+text = "Attention"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_right = 1
+
+[node name="Panel" type="Panel" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tukst")
+
+[node name="Label" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_738o0")
+theme_override_font_sizes/font_size = 25
+text = "Sorry, this feature isn’t available yet because the game is still in early development."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BuTombolClosetton" type="Button" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4/MarginContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+icon = ExtResource("3_738o0")
+icon_alignment = 1
+
+[connection signal="pressed" from="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4/MarginContainer/BuTombolClosetton" to="." method="_on_bu_tombol_closetton_pressed"]

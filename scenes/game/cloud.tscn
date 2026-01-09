@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxq3a8xxow81h"]
+
+[ext_resource type="Script" path="res://scripts/game/cloud.gd" id="1_wqlpl"]
+[ext_resource type="Texture2D" uid="uid://cl0p7erkt05ts" path="res://assets/images/cloud.png" id="2_jgtwr"]
+
+[node name="Cloud" type="Node2D"]
+z_index = -100
+script = ExtResource("1_wqlpl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(150, 80)
+offset_right = 150.0
+offset_bottom = 80.0
+texture = ExtResource("2_jgtwr")

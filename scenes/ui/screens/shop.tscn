@@ -1,0 +1,340 @@
+[gd_scene load_steps=11 format=3 uid="uid://wnp81il1mffs"]
+
+[ext_resource type="Texture2D" uid="uid://lnsbthat14g" path="res://assets/images/core/btn_back.png" id="1_epbsd"]
+[ext_resource type="Script" uid="uid://cdpwq1bbkbtli" path="res://scripts/ui/base_screen.gd" id="1_usj2y"]
+[ext_resource type="FontFile" uid="uid://wwahjgp203ua" path="res://assets/fonts/GermaniaOne-Regular.ttf" id="2_obwu6"]
+[ext_resource type="Texture2D" uid="uid://bia4rehu17s4a" path="res://assets/images/coin.png" id="3_t3xdf"]
+[ext_resource type="Texture2D" uid="uid://dwoddpg1gxmjv" path="res://assets/images/header_bg.png" id="4_0yw5g"]
+[ext_resource type="FontFile" uid="uid://bbmvg6ivebi03" path="res://assets/fonts/PressStart2P-Regular.ttf" id="5_s287r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usj2y"]
+bg_color = Color(0.73300546, 0.7330054, 0.7330054, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bidp2"]
+bg_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6156863, 0.8156863, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obwu6"]
+bg_color = Color(0.6156863, 0.8156863, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1wbr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="ShopUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_usj2y")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+
+[node name="MarginTemplates" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="MainContainer" type="VBoxContainer" parent="MarginTemplates"]
+layout_mode = 2
+
+[node name="HeaderContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="LeftHeader" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.66
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginTemplates/MainContainer/HeaderContainer/LeftHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/LeftHeader/MarginContainer"]
+layout_mode = 2
+
+[node name="XPContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/LeftHeader/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/LeftHeader/MarginContainer/HBoxContainer/XPContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="MarginTemplates/MainContainer/HeaderContainer/LeftHeader/MarginContainer/HBoxContainer/XPContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_epbsd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/LeftHeader/MarginContainer/HBoxContainer/XPContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CoinContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/LeftHeader/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="CenterHeader" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginTemplates/MainContainer/HeaderContainer/CenterHeader"]
+custom_minimum_size = Vector2(750, 20)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_0yw5g")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/CenterHeader/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LabelHeader" type="Label" parent="MarginTemplates/MainContainer/HeaderContainer/CenterHeader/TextureRect/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_s287r")
+theme_override_font_sizes/font_size = 45
+text = "SHOP"
+
+[node name="RightHeader" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.66
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginTemplates/MainContainer/HeaderContainer/RightHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/RightHeader/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Coin" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/RightHeader/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/RightHeader/MarginContainer/HBoxContainer/Coin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/HeaderContainer/RightHeader/MarginContainer/HBoxContainer/Coin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="TextureRect" type="TextureRect" parent="MarginTemplates/MainContainer/HeaderContainer/RightHeader/MarginContainer/HBoxContainer/Coin/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("3_t3xdf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginTemplates/MainContainer/HeaderContainer/RightHeader/MarginContainer/HBoxContainer/Coin/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_obwu6")
+theme_override_font_sizes/font_size = 57
+text = "0"
+
+[node name="BodyContainer" type="MarginContainer" parent="MarginTemplates/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/BodyContainer"]
+layout_mode = 2
+
+[node name="Main" type="MarginContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.44
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.62
+theme_override_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj2y")
+
+[node name="Label" type="Label" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("2_obwu6")
+theme_override_font_sizes/font_size = 50
+text = "LIST ITEMS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Button" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_bidp2")
+
+[node name="Button2" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_bidp2")
+
+[node name="Button3" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_bidp2")
+
+[node name="Button4" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_bidp2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj2y")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+
+[node name="Label" type="Label" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("2_obwu6")
+theme_override_font_sizes/font_size = 50
+text = "> HAT"
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="Button" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_obwu6")
+
+[node name="Button2" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_obwu6")
+
+[node name="Button3" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_obwu6")
+
+[node name="Button4" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_obwu6")
+
+[node name="Button5" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_obwu6")
+
+[node name="Button6" type="Button" parent="MarginTemplates/MainContainer/BodyContainer/HBoxContainer/Main/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_obwu6")
+
+[node name="Spacer" type="Panel" parent="MarginTemplates/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_styles/panel = SubResource("StyleBoxFlat_l1wbr")
+
+[connection signal="pressed" from="MarginTemplates/MainContainer/HeaderContainer/LeftHeader/MarginContainer/HBoxContainer/XPContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]

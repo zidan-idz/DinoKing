@@ -1,0 +1,294 @@
+[gd_scene load_steps=8 format=3 uid="uid://c03mxqg8tqgr0"]
+
+[ext_resource type="FontFile" uid="uid://wwahjgp203ua" path="res://assets/fonts/GermaniaOne-Regular.ttf" id="1_8llh2"]
+[ext_resource type="Script" path="res://scripts/ui/base_popup.gd" id="1_enpek"]
+[ext_resource type="Texture2D" uid="uid://cqoov1nkg6er3" path="res://assets/images/close.png" id="2_enpek"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btd1e"]
+bg_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xliu"]
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntxle"]
+bg_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6156863, 0.8156863, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ek4e"]
+bg_color = Color(0.6156863, 0.8156863, 0, 1)
+
+[node name="PopUpLeaderboardUI" type="CanvasLayer"]
+script = ExtResource("1_enpek")
+
+[node name="WadahUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BackgroundGelap" type="ColorRect" parent="WadahUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6784314)
+
+[node name="PanePopUp" type="PanelContainer" parent="WadahUI"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_btd1e")
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WadahUI/PanePopUp/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 1
+
+[node name="Label" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 33
+text = "Top Leaderboard"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BuTombolClosetton" type="Button" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MarginContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+icon = ExtResource("2_enpek")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 15
+
+[node name="Row1" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Left" type="PanelContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xliu")
+
+[node name="Rank" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row1/Left"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="PanelContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.18
+theme_override_styles/panel = SubResource("StyleBoxFlat_ntxle")
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row1/Right"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 9
+
+[node name="Username" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row1/Right/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 28
+text = "Cristiano Ronaldo"
+vertical_alignment = 1
+
+[node name="Row2" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Left" type="PanelContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xliu")
+
+[node name="Rank" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row2/Left"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 40
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="PanelContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.18
+theme_override_styles/panel = SubResource("StyleBoxFlat_ntxle")
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row2/Right"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 9
+
+[node name="Username" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row2/Right/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 28
+text = "Lionel Messi"
+vertical_alignment = 1
+
+[node name="Row3" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Left" type="PanelContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xliu")
+
+[node name="Rank" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row3/Left"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 40
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="PanelContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.18
+theme_override_styles/panel = SubResource("StyleBoxFlat_ntxle")
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row3/Right"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 9
+
+[node name="Username" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/VBoxContainer2/Row3/Right/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 28
+text = "Neymar Jr"
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(540, 2)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="VBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="Row3" type="HBoxContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Left" type="PanelContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xliu")
+
+[node name="Rank" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4/Row3/Left"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="PanelContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.18
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ek4e")
+
+[node name="MarginContainer" type="MarginContainer" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4/Row3/Right"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 9
+
+[node name="Username" type="Label" parent="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer4/Row3/Right/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8llh2")
+theme_override_font_sizes/font_size = 28
+text = "Erling Halland"
+vertical_alignment = 1
+
+[connection signal="pressed" from="WadahUI/PanePopUp/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MarginContainer/BuTombolClosetton" to="." method="_on_bu_tombol_closetton_pressed"]

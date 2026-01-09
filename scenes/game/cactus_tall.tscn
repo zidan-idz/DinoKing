@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi7ic7dd7gj3t"]
+
+[ext_resource type="Script" path="res://scripts/game/obstacle.gd" id="1_3iig4"]
+[ext_resource type="Texture2D" uid="uid://b1gphs0igog38" path="res://assets/images/surfboard.png" id="2_imrpa"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jrhl5"]
+a = Vector2(-9, -76)
+b = Vector2(-32, 39)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_256vv"]
+a = Vector2(17, -77)
+b = Vector2(39, 38)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imrpa"]
+radius = 31.0
+height = 82.0
+
+[node name="Cactus" type="Area2D"]
+script = ExtResource("1_3iig4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.000002, -19)
+scale = Vector2(0.8125, 1.0078125)
+texture = ExtResource("2_imrpa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("SegmentShape2D_jrhl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_256vv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(3, -20)
+shape = SubResource("CapsuleShape2D_imrpa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

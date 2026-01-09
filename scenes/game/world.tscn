@@ -1,0 +1,175 @@
+[gd_scene load_steps=7 format=3 uid="uid://baiyhrpo652dv"]
+
+[ext_resource type="Script" uid="uid://cft3v3w01g8ch" path="res://scripts/game/world.gd" id="1_3kekb"]
+[ext_resource type="PackedScene" uid="uid://bi8pq2si7t7tg" path="res://scenes/Game/dino.tscn" id="1_ebafo"]
+[ext_resource type="Texture2D" uid="uid://bi2i5apqqj7y8" path="res://assets/images/sun.png" id="3_chwgs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj8i0"]
+size = Vector2(1947, 167)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3kekb"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chwgs"]
+bg_color = Color(0, 0, 0, 0.32941177)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_3kekb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -99
+offset_right = 647.0
+offset_bottom = 205.0
+color = Color(0.5529412, 0.5529412, 0.5529412, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -27.0
+offset_top = 632.0
+offset_right = 1922.0
+offset_bottom = 1107.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.7921569, 0.69411767, 0.3882353, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(948.5, 715.5)
+shape = SubResource("RectangleShape2D_aj8i0")
+
+[node name="Dino" parent="Ground" instance=ExtResource("1_ebafo")]
+position = Vector2(915, 550)
+
+[node name="ColorRect2" type="ColorRect" parent="Ground"]
+z_index = -200
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -29.0
+offset_top = -41.0
+offset_right = 1920.0
+offset_bottom = 640.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.5019608, 0.54901963, 0.5568628, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 288.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 92
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_3kekb")
+
+[node name="RestartButton" type="Button" parent="HUD"]
+visible = false
+offset_left = 752.0
+offset_top = 618.0
+offset_right = 1077.0
+offset_bottom = 707.0
+theme_override_font_sizes/font_size = 30
+text = "MAINKAN LAGI"
+
+[node name="HomeButton" type="Button" parent="HUD"]
+visible = false
+offset_left = 752.0
+offset_top = 720.0
+offset_right = 1077.0
+offset_bottom = 809.0
+theme_override_font_sizes/font_size = 30
+text = "KEMBALI KE MENU"
+
+[node name="GameOverLabel" type="Label" parent="HUD"]
+visible = false
+offset_left = 750.0
+offset_top = 455.0
+offset_right = 1083.0
+offset_bottom = 562.0
+theme_override_font_sizes/font_size = 55
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="HUD"]
+offset_left = 736.0
+offset_top = 497.0
+offset_right = 1096.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 30
+text = "TEKAN UNTUK BERMAIN"
+
+[node name="JumpButton" type="Button" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 405.0
+offset_top = -340.0
+offset_right = 588.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_chwgs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chwgs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chwgs")
+theme_override_styles/focus = SubResource("StyleBoxFlat_chwgs")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_chwgs")
+text = "▲"
+
+[node name="SkillButton" type="Button" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -588.0
+offset_top = -340.0
+offset_right = -405.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_chwgs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chwgs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chwgs")
+theme_override_styles/focus = SubResource("StyleBoxFlat_chwgs")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_chwgs")
+disabled = true
+text = "⚡"
+
+[node name="CloudTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1498.0
+offset_top = -9.0
+offset_right = 1702.0
+offset_bottom = 195.0
+texture = ExtResource("3_chwgs")
+
+[connection signal="pressed" from="HUD/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="HUD/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="HUD/JumpButton" to="." method="_on_jump_button_pressed"]
+[connection signal="pressed" from="HUD/SkillButton" to="." method="_on_skill_button_pressed"]

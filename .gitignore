@@ -1,0 +1,16 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Internal Documentation (Private)
+NOTE.md
+project_analysis.md
+
+# Godot generated export templates related
+*.tpz
+*.site
+*.xyz
+
+# Temporary files
+*.tmp
+*.log

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://drub38rs4wxmo"]
+
+[ext_resource type="Script" path="res://scripts/game/cloud.gd" id="1_coal2"]
+[ext_resource type="Texture2D" uid="uid://cl0p7erkt05ts" path="res://assets/images/cloud-computing 3.png" id="2_w15c6"]
+
+[node name="Cloud" type="Node2D"]
+z_index = -100
+script = ExtResource("1_coal2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(180, 80)
+offset_right = 180.0
+offset_bottom = 80.0
+texture = ExtResource("2_w15c6")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(120, 60)
+offset_left = 130.0
+offset_top = 40.0
+offset_right = 250.0
+offset_bottom = 100.0
+texture = ExtResource("2_w15c6")

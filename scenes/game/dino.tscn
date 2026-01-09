@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi8pq2si7t7tg"]
+
+[ext_resource type="Script" path="res://scripts/game/dino.gd" id="1_xu330"]
+[ext_resource type="Texture2D" uid="uid://qaflj1j61ucl" path="res://assets/images/dino.png" id="2_xmlln"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gx6ij"]
+radius = 66.07572
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmlln"]
+size = Vector2(53.625, 45)
+
+[node name="Dino" type="CharacterBody2D"]
+script = ExtResource("1_xu330")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_gx6ij")
+debug_color = Color(0.079799995, 0.21587995, 0.42, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_xmlln")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -90.0
+offset_top = -82.5
+offset_right = 90.0
+offset_bottom = 82.5
+texture = ExtResource("2_xmlln")
+expand_mode = 1

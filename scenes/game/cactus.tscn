@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://g0q3a6vdaqmg"]
+
+[ext_resource type="Script" uid="uid://brcdbro7p6m7k" path="res://scenes/Game/cactus.gd" id="1_rkvfn"]
+[ext_resource type="Texture2D" uid="uid://c2bybs4fvvn1s" path="res://assets/images/win11.png" id="2_435xx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd201"]
+size = Vector2(44, 40)
+
+[node name="Cactus" type="Area2D"]
+script = ExtResource("1_rkvfn")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(20, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 22.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_435xx")
+expand_mode = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nd201")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

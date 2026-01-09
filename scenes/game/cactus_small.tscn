@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7teepungv1tl"]
+
+[ext_resource type="Script" path="res://scripts/game/obstacle.gd" id="1_ic5e6"]
+[ext_resource type="Texture2D" uid="uid://b3xyyerv5n1si" path="res://assets/images/hummingbird.png" id="2_b5pib"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_drw4w"]
+radius = 17.0
+
+[node name="Cactus" type="Area2D"]
+script = ExtResource("1_ic5e6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.000001, 0.99999905)
+scale = Vector2(0.40657893, 0.33289477)
+texture = ExtResource("2_b5pib")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_drw4w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce2f0uypxm2c0"]
+
+[ext_resource type="Script" path="res://scripts/game/obstacle.gd" id="1_idu1g"]
+[ext_resource type="Texture2D" uid="uid://dry00aobjt1bd" path="res://assets/images/wave.png" id="2_b85pg"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f8llo"]
+a = Vector2(-16, -12)
+b = Vector2(-26, 13)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_puuia"]
+a = Vector2(3, -72)
+b = Vector2(62, 13)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_j1tyy"]
+a = Vector2(-53, -35)
+b = Vector2(-32, -62)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b85pg"]
+height = 52.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5o8hj"]
+a = Vector2(-52, -36)
+b = Vector2(-18, -44)
+
+[node name="Cactus" type="Area2D"]
+script = ExtResource("1_idu1g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_f8llo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_b85pg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_puuia")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_j1tyy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-45, -12)
+shape = SubResource("CapsuleShape2D_b85pg")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(20, -26)
+shape = SubResource("SegmentShape2D_5o8hj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
