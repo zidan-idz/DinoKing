@@ -33,5 +33,4 @@ Credits: Muhammad Raid Zaidani (Developer), Syahril Rizky & Mufti Ali (Support).
 
 [📜 Lihat Changelog](CHANGELOG.md) | [⚖️ Lihat Lisensi](LICENSE)
 
-All Rights Reserved. © 2026 Muhammad Raid Zaidani.
-Dilarang menyalin atau menggunakan aset tanpa izin tertulis.
+Licensed under the Apache License, Version 2.0. © 2026 Muhammad Raid Zaidani.

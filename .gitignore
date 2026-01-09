@@ -14,3 +14,4 @@ project_analysis.md
 # Temporary files
 *.tmp
 *.log
+*.import
