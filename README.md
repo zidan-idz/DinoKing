@@ -1,5 +1,5 @@
 <div align="center">
-<img src="icon.png" width="80" alt="Dino King Logo" style="vertical-align:middle; margin-right: 15px;" /> 
+<img src="Icon.png" width="80" alt="Dino King Logo" style="vertical-align:middle; margin-right: 15px;" /> 
 <h1 style="display: inline-block; vertical-align:middle;">Dino King</h1>
 </div>
 
